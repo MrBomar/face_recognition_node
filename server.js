@@ -29,6 +29,4 @@ app.get('/profile/:id', (req, res) => Profile.Profile(req, res, knex));
 app.put('/image', (req, res) => Image.image(req, res, knex));
 app.post('/imageurl', (req, res) => Image.handleApiCall(req, res));
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`App is running on port ${LISTENING_PORT}`)
-});
+app.listen(process.env.PORT || 3000, ()=>{console.log('Connected')});

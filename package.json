@@ -1,0 +1,25 @@
+{
+  "name": "facerecognitionbrain-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js -L"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "clarifai": "^2.9.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "git": "^0.1.5",
+    "knex": "^0.17.0-next3",
+    "nodemon": "^1.19.0",
+    "pg": "^7.11.0"
+  }
+}

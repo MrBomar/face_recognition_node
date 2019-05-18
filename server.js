@@ -12,7 +12,6 @@ const knex = require('knex')({
     }
 });
 
-const LISTENING_PORT = 3010;
 const SignIn = require('./controlers/SignIn');
 const Register = require('./controlers/Register');
 const Profile = require('./controlers/Register');
@@ -33,4 +32,6 @@ app.get('/profile/:id', (req, res) => Profile.Profile(req, res, knex))
 app.put('/image', (req, res) => Image.image(req, res, knex));
 app.post('/imageurl', (req, res) => Image.handleApiCall(req, res));
 
-app.listen(LISTENING_PORT, () => console.log(`App is running on port ${LISTENING_PORT}`));
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`App is running on port ${LISTENING_PORT}`)
+});

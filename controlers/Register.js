@@ -1,4 +1,5 @@
 const register = (req, res, knex, bcrypt) => {
+    console.log(req.body);
     const {email, name, password} = req.body;
     const hash = bcrypt.hashSync(password);
     knex.transaction(trx => {

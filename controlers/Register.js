@@ -25,7 +25,6 @@ const register = (req, res, knex, bcrypt) => {
         })
         .then(trx.commit)
         .catch(err => {
-            console.log(err);
             trx.rollback;
         })
     })

@@ -1,5 +1,4 @@
 const register = (req, res, knex, bcrypt) => {
-    console.log(req.body);
     const {email, name, password} = req.body;
     const hash = bcrypt.hashSync(password);
     knex.transaction(trx => {
@@ -25,7 +24,10 @@ const register = (req, res, knex, bcrypt) => {
             })
         })
         .then(trx.commit)
-        .catch(trx.rollback)
+        .catch(err => {
+            console.log(err);
+            trx.rollback;
+        })
     })
     .catch(err => res.setMaxListeners(400).json('Unable to register.'));
 }

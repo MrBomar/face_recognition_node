@@ -20,6 +20,7 @@ const register = (req, res, knex, bcrypt) => {
                 }
             )
             .then(user=>{
+                console.log(user[0]);
                 res.json(user[0]);
             })
         })

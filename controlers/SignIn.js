@@ -1,10 +1,8 @@
 const signIn = (req, res, knex, bcrypt) => {
-    console.log(req.body.email);
     knex.select('email','hash')
     .from('login')
     .where('email', '=', req.body.email)
     .then(data=>{
-        console.log(data);
         if(bcrypt.compareSync(req.body.password, data[0].hash)){
             knex.select('*').from('users')
             .where('email', '=', req.body.email)

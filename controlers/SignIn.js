@@ -1,4 +1,5 @@
 const signIn = (req, res, knex, bcrypt) => {
+    console.log(req.body.email);
     knex.select('email','hash')
     .from('login')
     .where('email', '=', req.body.email)
